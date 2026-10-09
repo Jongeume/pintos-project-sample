@@ -129,6 +129,7 @@ make check : PASS 0/27 → 2/27 (alarm-single, alarm-multiple)
   - GitHub 는 닫기 키워드를 **기본 브랜치(`main`)를 향한 PR 에서만** 읽는다
   - 개인 → 기능, 기능 → dev PR 에서는 무시된다
 - 이슈는 **머지한 뒤 담당자가 직접 닫는다**
+- 카드가 움직이는 전체 흐름 (시작 → PR → 머지 → 완성) 은 [깃 프로젝트 사용법 7절](./Project_Guide.md#7-하루-흐름) 에 그림으로 있다
 
 ---
 
