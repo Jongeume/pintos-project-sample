@@ -150,6 +150,21 @@ flowchart TB
 
 ## 7. 하루 흐름
 
+작업 하나가 시작부터 끝날 때까지, Git 에서 한 일이 프로젝트 카드에 어떻게 비치는지:
+
+```mermaid
+flowchart TB
+    S1["<b>1. 시작</b><br/>Git : 개인 브랜치 따기<br/>카드 : In Progress · 시작일 · 마감일"]
+    S2["<b>2. 작업</b><br/>Git : 커밋 · push (매일 퇴근 전)<br/>카드 : 변화 없음"]
+    S3["<b>3. 함수 하나 끝 → PR</b><br/>Git : make check 후 기능 브랜치로 PR<br/>카드 : Review · Development 로 이슈 연결"]
+    S4["<b>4. 기능 브랜치에 머지</b><br/>Git : 승인 없이 본인이 merge commit<br/>카드 : Done · 이슈가 자동으로 닫힌다"]
+    S5["<b>5. 기능 완성 → dev PR</b><br/>Git : 1명 승인 후 머지<br/>카드 : 부모 카드 Done · 진행률 막대가 찬다"]
+    S1 --> S2 --> S3 --> S4 --> S5
+```
+
+- 충돌이 나면 PR 은 열어 둔 채 `fixed-` 브랜치에서 해결한다 ([GitHub 전략 5절](./Github_Strategy.md#5-충돌이-났을-때-fixed-브랜치)). 카드는 Review 에 그대로 있다
+- 기능 → dev PR 을 열기 전에 하위 이슈가 전부 Done 인지 본다 (열린 개인 PR 이 없어야 한다)
+
 | 언제 | 할 일 |
 |---|---|
 | 일을 시작할 때 | 내 카드를 **In Progress** 로 옮긴다 · 시작일 · 마감일 채우기 |
